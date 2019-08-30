@@ -1,0 +1,14 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "description": "Implementation of the ''\u001b[DGreeter' kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Juliano Ladeira",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
