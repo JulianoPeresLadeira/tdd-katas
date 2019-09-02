@@ -15,12 +15,22 @@ class StringCalculator {
 
             return redelimitedInput.split(defaultDelimitator).map(i => parseInt(i))
         }
+        const validateOperands = (operands) => {
+            const negativeOperands = operands.filter(op => op < 0);
+
+            if (negativeOperands.length > 0) {
+                throw `negatives not allowed: ${negativeOperands}`
+            }
+        }
 
         if (input == '') {
             return 0;
         }
 
-        return getOperands().reduce((acc, curr) => acc + curr, 0);
+        const operands = getOperands();
+        validateOperands(operands);
+
+        return operands.reduce((acc, curr) => acc + curr, 0);
     }
 }
 

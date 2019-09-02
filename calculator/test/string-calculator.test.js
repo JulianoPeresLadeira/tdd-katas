@@ -92,3 +92,19 @@ describe('validates multiple delimited operations',
         )
     }
 )
+describe('validates treatment of negative operands',
+    () => {
+        test('if throws error on negative operand',
+            () => {
+                expect(() => StringCalculator.add('1,-1')).toThrow('negatives not allowed: -1')
+            }
+        )
+
+        test('if throws error on multiple negative operands',
+            () => {
+                expect(() => StringCalculator.add('1,-1\n2,-2')).toThrow('negatives not allowed: -1,-2')
+            }
+        )
+    }
+)
+ 
