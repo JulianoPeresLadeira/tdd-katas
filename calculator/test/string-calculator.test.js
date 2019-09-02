@@ -6,6 +6,12 @@ it('should be 0',
     }
 )
 
+it('should ignore values greater than 1000',
+    () => {
+        expect(StringCalculator.add('1001, 1000, 1,1002')).toBe(1001)
+    }
+)
+
 describe('validates single input result',
     () => {
         const values = [1,2,3,4,5,6,7,8,9];
@@ -23,7 +29,6 @@ describe('validates single input result',
 
 describe('validates simple comma separated add operations', 
     () => {
-
         const operand1 = [1,2,3,4];
         const operand2 = [1,2,3,4];
 
@@ -46,7 +51,6 @@ describe('validates simple comma separated add operations',
 
 describe('validates newline separated add operations', 
     () => {
-
         const operand1 = [1,2,3,4];
         const operand2 = [1,2,3,4];
 
@@ -92,6 +96,7 @@ describe('validates multiple delimited operations',
         )
     }
 )
+
 describe('validates treatment of negative operands',
     () => {
         test('if throws error on negative operand',
@@ -107,4 +112,19 @@ describe('validates treatment of negative operands',
         )
     }
 )
- 
+
+describe('validates multiple line delimitators',
+    () => {
+        const customDelimitators = ['#', '%', '@', '!'];
+
+        customDelimitators.forEach(
+            customDelim => {
+                it (`should work with the ${customDelim} custom delimitator`,
+                    () => {
+                        expect(StringCalculator.add(`//${customDelim}\n1${customDelim}2${customDelim}3${customDelim}4`)).toBe(10)
+                    }
+                )
+            }
+        )
+    }
+)
