@@ -1,7 +1,12 @@
 class StringCalculator {
 
     static add(input) {
-        return 0;
+
+        if (input == '') {
+            return 0;
+        }
+
+        return parseInt(input);
     }
 }
 
