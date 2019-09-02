@@ -5,14 +5,15 @@ class StringCalculator {
         const getOperands = () => {
 
             const possibleDelimitators = [',', '\n'];
+            const defaultDelimitator = possibleDelimitators[0];
 
-            const delimitator = possibleDelimitators.find(
-                delim => {
-                    return input.indexOf(delim) > 0;
-                }
+            const redelimitedInput = possibleDelimitators.reduce(
+                (iteratedInput, delim) => {
+                    return iteratedInput.split(delim).join(defaultDelimitator);
+                }, input
             );
 
-            return input.split(delimitator).map(i => parseInt(i))
+            return redelimitedInput.split(defaultDelimitator).map(i => parseInt(i))
         }
 
         if (input == '') {
