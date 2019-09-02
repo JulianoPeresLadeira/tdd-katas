@@ -2,7 +2,18 @@ class StringCalculator {
 
     static add(input) {
 
-        const getOperands = () => input.split(',').map(i => parseInt(i))
+        const getOperands = () => {
+
+            const possibleDelimitators = [',', '\n'];
+
+            const delimitator = possibleDelimitators.find(
+                delim => {
+                    return input.indexOf(delim) > 0;
+                }
+            );
+
+            return input.split(delimitator).map(i => parseInt(i))
+        }
 
         if (input == '') {
             return 0;

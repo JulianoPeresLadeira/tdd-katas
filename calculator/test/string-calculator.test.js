@@ -21,7 +21,7 @@ describe('validates single input result',
     }
 )
 
-describe('validates simple add operations', 
+describe('validates simple comma separated add operations', 
     () => {
 
         const operand1 = [1,2,3,4];
@@ -34,6 +34,29 @@ describe('validates simple add operations',
                         it(`${op1} + ${op2} == ${op1 + op2}`,
                             () => {
                                 expect(StringCalculator.add(`${op1},${op2}`)).toBe(op1 + op2)
+                            }
+                        )
+                    }
+                )
+            }
+        );
+
+    }
+)
+
+describe('validates newline separated add operations', 
+    () => {
+
+        const operand1 = [1,2,3,4];
+        const operand2 = [1,2,3,4];
+
+        operand1.forEach(
+            op1 => {
+                operand2.forEach(
+                    op2 => {
+                        it(`${op1} + ${op2} == ${op1 + op2}`,
+                            () => {
+                                expect(StringCalculator.add(`${op1}\n${op2}`)).toBe(op1 + op2)
                             }
                         )
                     }
