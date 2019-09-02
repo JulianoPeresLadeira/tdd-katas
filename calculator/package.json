@@ -1,7 +1,7 @@
 {
-  "name": "greeter",
+  "name": "calculator",
   "version": "1.0.0",
-  "description": "Implementation of the Greeter kata",
+  "description": "Implementation of the Calculator Kata",
   "main": "index.js",
   "scripts": {
     "test": "jest"
