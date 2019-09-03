@@ -1,0 +1,11 @@
+{
+  "name": "prime-factors",
+  "version": "1.0.0",
+  "description": "Implementation of the prime factor calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Juliano Ladeira",
+  "license": "ISC"
+}

@@ -115,7 +115,7 @@ describe('validates treatment of negative operands',
 
 describe('validates multiple line delimitators',
     () => {
-        const customDelimitators = ['#', '%', '@', '!'];
+        const customDelimitators = ['#', '%', '@', '!', '#####', '%%%%%', '@@@@@', '!!!!!'];
 
         customDelimitators.forEach(
             customDelim => {
